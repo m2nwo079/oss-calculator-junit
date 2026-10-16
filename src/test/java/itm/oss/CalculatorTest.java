@@ -3,6 +3,7 @@ package itm.oss;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -45,5 +46,13 @@ class CalculatorTest {
         assertFalse(calc.isPrime(-4), "There are not negative primer numbers.");
         assertFalse(calc.isPrime(-5), "There are not negative primer numbers.");
     }
+
+    @Test
+    @DisplayName("Testing function isPrime with 4")
+    void isFourPrime() {
+        Calculator calculator = new Calculator();
+        assertFalse(calculator.isPrime(4), "4 is not prime.");
+    }
+
 
 }
